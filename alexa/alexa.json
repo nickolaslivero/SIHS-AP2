@@ -1,0 +1,70 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "pet",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "LiberarRacaoIntent",
+                    "slots": [],
+                    "samples": [
+                        "dê ração",
+                        "dê comida",
+                        "libere raçao",
+                        "libere comida ",
+                        "comida pet",
+                        "ração pet",
+                        "dê ração ao pet",
+                        "dê comida ao pet",
+                        "ative o dispenser do pet",
+                        "libere a ração do pet",
+                        "peça ao controlador para liberar ração do pet",
+                        "Ative o alimentador do pet",
+                        "Dê ração do pet",
+                        "Liberar ração para o pet"
+                    ]
+                },
+                {
+                    "name": "StatusAmbienteIntent",
+                    "slots": [],
+                    "samples": [
+                        "ambiente do pet",
+                        "umidade do pet",
+                        "temperatura do pet",
+                        "como está o ambiente do pet agora",
+                        "me diga a temperatura e a umidade do pet",
+                        "Qual o status do ambiente do pet"
+                    ]
+                },
+                {
+                    "name": "StatusAlimentacaoIntent",
+                    "slots": [],
+                    "samples": [
+                        "status do dispenser do pet",
+                        "quanto de ração do pet",
+                        "dispenser do pet",
+                        "me informe o status do dispenser do pet",
+                        "quanto de ração do pet ainda tem",
+                        "Qual o status da alimentacao do pet"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}

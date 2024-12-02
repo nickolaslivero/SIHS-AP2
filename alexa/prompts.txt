@@ -1,5 +1,0 @@
-Alexa, peça ao controlador remoto de pets para liberar ração.
-Peça ao controlador para liberar ração.
-Ative o alimentador do pet
-Dê ração agora
-Liberar ração para o pet
