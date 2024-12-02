@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "author": "Cassiel Stavros De Melo Dutra",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-breadboard-half", "id": "bb1", "top": 141, "left": 70, "attrs": {} },
+      { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 124.8, "left": -52.76, "attrs": {} },
+      { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": 100, "left": 242.22, "attrs": {} },
+      { "type": "wokwi-dht22", "id": "dht1", "top": 77.1, "left": 167.4, "attrs": {} },
+      { "type": "wokwi-servo", "id": "servo1", "top": 372.4, "left": 144, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "esp:13", "pir1:OUT", "green", [ "h-19.05", "v67.2", "h144.14" ] ],
+      [ "esp:3V3", "bb1:tp.1", "red", [ "v-38.4", "h152.15" ] ],
+      [ "dht1:VCC", "bb1:tp.5", "red", [ "h-38.4", "v-38.7" ] ],
+      [ "dht1:GND", "bb1:tn.3", "black", [ "v-28.8", "h-96" ] ],
+      [ "pir1:VCC", "bb1:tp.13", "red", [ "h-38.4", "v-38.7" ] ],
+      [ "pir1:GND", "bb1:tn.21", "black", [ "h38.14", "v-28.7" ] ],
+      [ "bb1:tn.1", "esp:GND.2", "black", [ "v-9.7", "h-56" ] ],
+      [ "servo1:V+", "esp:5V", "red", [ "h0" ] ],
+      [ "servo1:GND", "bb1:tn.4", "black", [ "h0" ] ],
+      [ "esp:23", "servo1:PWM", "purple", [ "h9.6", "v278.2" ] ],
+      [ "pir1:VCC", "bb1:20t.a", "", [ "$bb" ] ],
+      [ "pir1:OUT", "bb1:21t.a", "", [ "$bb" ] ],
+      [ "pir1:GND", "bb1:22t.a", "", [ "$bb" ] ],
+      [ "dht1:VCC", "bb1:10t.a", "", [ "$bb" ] ],
+      [ "dht1:SDA", "bb1:11t.a", "", [ "$bb" ] ],
+      [ "dht1:NC", "bb1:12t.a", "", [ "$bb" ] ],
+      [ "dht1:GND", "bb1:13t.a", "", [ "$bb" ] ],
+      [ "dht1:SDA", "esp:4", "green", [ "v0" ] ]
+    ],
+    "dependencies": {}
+  }
