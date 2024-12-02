@@ -144,41 +144,6 @@
         "willPayload": ""
     },
     {
-        "id": "87e3079da454e84c",
-        "type": "ui_switch",
-        "z": "51d90f6b1791decf",
-        "name": "Dispenser",
-        "label": "DISPENSER",
-        "tooltip": "",
-        "group": "28b6eb2946fcb092",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "petmonitor/alimentacao/controle",
-        "topicType": "str",
-        "style": "",
-        "onvalue": "{\"liberar_racao\": \"10\"}",
-        "onvalueType": "json",
-        "onicon": "",
-        "oncolor": "green",
-        "offvalue": "{\"liberar_racao\": \"0\"}",
-        "offvalueType": "json",
-        "officon": "",
-        "offcolor": "red",
-        "animate": false,
-        "className": "",
-        "x": 240,
-        "y": 620,
-        "wires": [
-            [
-                "b5ee898871272c3e",
-                "46df03d61506b714"
-            ]
-        ]
-    },
-    {
         "id": "b5ee898871272c3e",
         "type": "mqtt out",
         "z": "51d90f6b1791decf",
@@ -238,6 +203,8 @@
         ],
         "seg1": "25",
         "seg2": "35",
+        "diff": false,
+        "className": "",
         "x": 490,
         "y": 420,
         "wires": []
@@ -264,54 +231,11 @@
         ],
         "seg1": "30",
         "seg2": "60",
-        "x": 490,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "421bf8e94d0cf7ac",
-        "type": "mqtt out",
-        "z": "51d90f6b1791decf",
-        "name": "MQTT - Controle Ambiente",
-        "topic": "petmonitor/ambiente/controle",
-        "qos": "0",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "939fdde873a40273",
+        "diff": false,
+        "className": "",
         "x": 480,
-        "y": 740,
+        "y": 460,
         "wires": []
-    },
-    {
-        "id": "de82b9082f3d8856",
-        "type": "ui_slider",
-        "z": "51d90f6b1791decf",
-        "name": "Controle Ar-Condicionado",
-        "label": "Controle do Ar (°C)",
-        "tooltip": "",
-        "group": "28b6eb2946fcb092",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "outs": "all",
-        "topic": "petmonitor/ambiente/controle",
-        "topicType": "msg",
-        "min": "16",
-        "max": "30",
-        "step": 1,
-        "x": 220,
-        "y": 740,
-        "wires": [
-            [
-                "421bf8e94d0cf7ac",
-                "16801c7fc00f3ae3"
-            ]
-        ]
     },
     {
         "id": "46df03d61506b714",
@@ -324,6 +248,8 @@
         "tostatus": false,
         "complete": "true",
         "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
         "x": 470,
         "y": 680,
         "wires": []
@@ -339,23 +265,124 @@
         "tostatus": false,
         "complete": "true",
         "targetType": "full",
-        "x": 470,
-        "y": 540,
+        "x": 510,
+        "y": 500,
         "wires": []
     },
     {
-        "id": "16801c7fc00f3ae3",
+        "id": "f0e82830569fd450",
+        "type": "ui_button",
+        "z": "51d90f6b1791decf",
+        "name": "Dispenser",
+        "group": "28b6eb2946fcb092",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Dispenser",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"liberar_racao\": \"10\"}",
+        "payloadType": "json",
+        "topic": "petmonitor/alimentacao/controle",
+        "topicType": "str",
+        "x": 240,
+        "y": 560,
+        "wires": [
+            [
+                "b5ee898871272c3e",
+                "46df03d61506b714"
+            ]
+        ]
+    },
+    {
+        "id": "bea17f9614d4fa87",
+        "type": "mqtt in",
+        "z": "51d90f6b1791decf",
+        "name": "MQTT - Status Ração",
+        "topic": "petmonitor/alimentacao/status",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "939fdde873a40273",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 760,
+        "wires": [
+            [
+                "4573ddd6420d84bd",
+                "7b5734bec3b3fb27"
+            ]
+        ]
+    },
+    {
+        "id": "769c3f079878b495",
+        "type": "ui_gauge",
+        "z": "51d90f6b1791decf",
+        "name": "Ração",
+        "group": "28b6eb2946fcb092",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Ração",
+        "label": "g",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "25",
+        "seg2": "35",
+        "diff": false,
+        "className": "",
+        "x": 650,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "4573ddd6420d84bd",
         "type": "debug",
         "z": "51d90f6b1791decf",
-        "name": "Debug Ar Condicionado",
+        "name": "Debug Ração",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "true",
         "targetType": "full",
-        "x": 490,
-        "y": 800,
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 860,
         "wires": []
+    },
+    {
+        "id": "7b5734bec3b3fb27",
+        "type": "function",
+        "z": "51d90f6b1791decf",
+        "name": "quantidade restante",
+        "func": "if (msg.payload.quantidade_restante !== undefined) {\n    return { payload: msg.payload.quantidade_restante };\n}\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 760,
+        "wires": [
+            [
+                "769c3f079878b495"
+            ]
+        ]
     }
 ]

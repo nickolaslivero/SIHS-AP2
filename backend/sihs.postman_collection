@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "b61bdccb-9ef9-410d-b8f0-5d523959c087",
+		"name": "sihs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23148646"
+	},
+	"item": [
+		{
+			"name": "liberar racao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"version\": \"1.0\",\r\n  \"session\": {\r\n    \"new\": true,\r\n    \"sessionId\": \"amzn1.echo-api.session.test-session\",\r\n    \"application\": {\r\n      \"applicationId\": \"amzn1.ask.skill.9fad6b59-80ad-4aa2-b1ad-af1d14b01f0c\"\r\n    },\r\n    \"user\": {\r\n      \"userId\": \"amzn1.ask.account.test-user\"\r\n    }\r\n  },\r\n  \"context\": {\r\n    \"system\": {\r\n      \"application\": {\r\n        \"applicationId\": \"amzn1.ask.skill.9fad6b59-80ad-4aa2-b1ad-af1d14b01f0c\"\r\n      },\r\n      \"user\": {\r\n        \"userId\": \"amzn1.ask.account.test-user\"\r\n      },\r\n      \"device\": {\r\n        \"deviceId\": \"amzn1.ask.device.test-device\",\r\n        \"supportedInterfaces\": {}\r\n      }\r\n    }\r\n  },\r\n  \"request\": {\r\n    \"type\": \"IntentRequest\",\r\n    \"requestId\": \"amzn1.echo-api.request.test-request\",\r\n    \"locale\": \"pt-BR\",\r\n    \"timestamp\": \"2024-11-20T20:20:20Z\",\r\n    \"intent\": {\r\n      \"name\": \"LiberarRacaoIntent\",\r\n      \"slots\": {}\r\n    }\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://3ccb-191-189-1-62.ngrok-free.app/command",
+					"protocol": "https",
+					"host": [
+						"3ccb-191-189-1-62",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"command"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "status ambiente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"version\": \"1.0\",\r\n  \"session\": {\r\n    \"new\": true,\r\n    \"sessionId\": \"amzn1.echo-api.session.test-session\",\r\n    \"application\": {\r\n      \"applicationId\": \"amzn1.ask.skill.9fad6b59-80ad-4aa2-b1ad-af1d14b01f0c\"\r\n    },\r\n    \"user\": {\r\n      \"userId\": \"amzn1.ask.account.test-user\"\r\n    }\r\n  },\r\n  \"context\": {\r\n    \"system\": {\r\n      \"application\": {\r\n        \"applicationId\": \"amzn1.ask.skill.9fad6b59-80ad-4aa2-b1ad-af1d14b01f0c\"\r\n      },\r\n      \"user\": {\r\n        \"userId\": \"amzn1.ask.account.test-user\"\r\n      },\r\n      \"device\": {\r\n        \"deviceId\": \"amzn1.ask.device.test-device\",\r\n        \"supportedInterfaces\": {}\r\n      }\r\n    }\r\n  },\r\n  \"request\": {\r\n    \"type\": \"IntentRequest\",\r\n    \"requestId\": \"amzn1.echo-api.request.test-request\",\r\n    \"locale\": \"pt-BR\",\r\n    \"timestamp\": \"2024-11-20T20:20:20Z\",\r\n    \"intent\": {\r\n      \"name\": \"StatusAmbienteIntent\",\r\n      \"slots\": {}\r\n    }\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://3ccb-191-189-1-62.ngrok-free.app/command",
+					"protocol": "https",
+					"host": [
+						"3ccb-191-189-1-62",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"command"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "status alimentacao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"version\": \"1.0\",\r\n  \"session\": {\r\n    \"new\": true,\r\n    \"sessionId\": \"amzn1.echo-api.session.test-session\",\r\n    \"application\": {\r\n      \"applicationId\": \"amzn1.ask.skill.9fad6b59-80ad-4aa2-b1ad-af1d14b01f0c\"\r\n    },\r\n    \"user\": {\r\n      \"userId\": \"amzn1.ask.account.test-user\"\r\n    }\r\n  },\r\n  \"context\": {\r\n    \"system\": {\r\n      \"application\": {\r\n        \"applicationId\": \"amzn1.ask.skill.9fad6b59-80ad-4aa2-b1ad-af1d14b01f0c\"\r\n      },\r\n      \"user\": {\r\n        \"userId\": \"amzn1.ask.account.test-user\"\r\n      },\r\n      \"device\": {\r\n        \"deviceId\": \"amzn1.ask.device.test-device\",\r\n        \"supportedInterfaces\": {}\r\n      }\r\n    }\r\n  },\r\n  \"request\": {\r\n    \"type\": \"IntentRequest\",\r\n    \"requestId\": \"amzn1.echo-api.request.test-request\",\r\n    \"locale\": \"pt-BR\",\r\n    \"timestamp\": \"2024-11-20T20:20:20Z\",\r\n    \"intent\": {\r\n      \"name\": \"StatusAlimentacaoIntent\",\r\n      \"slots\": {}\r\n    }\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://3ccb-191-189-1-62.ngrok-free.app/command",
+					"protocol": "https",
+					"host": [
+						"3ccb-191-189-1-62",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"command"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
