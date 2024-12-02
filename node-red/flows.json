@@ -1,0 +1,361 @@
+[
+    {
+        "id": "51d90f6b1791decf",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "28b6eb2946fcb092",
+        "type": "ui_group",
+        "name": "Controle",
+        "tab": "63831bfb83da8bae",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "63831bfb83da8bae",
+        "type": "ui_tab",
+        "name": "PetMonitor",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5d787b8227041d8f",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "939fdde873a40273",
+        "type": "mqtt-broker",
+        "name": "Ngrok MQTT",
+        "broker": "0.tcp.sa.ngrok.io",
+        "port": "11868",
+        "clientid": "NodeRedClient",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "87e3079da454e84c",
+        "type": "ui_switch",
+        "z": "51d90f6b1791decf",
+        "name": "Dispenser",
+        "label": "DISPENSER",
+        "tooltip": "",
+        "group": "28b6eb2946fcb092",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "petmonitor/alimentacao/controle",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "{\"liberar_racao\": \"10\"}",
+        "onvalueType": "json",
+        "onicon": "",
+        "oncolor": "green",
+        "offvalue": "{\"liberar_racao\": \"0\"}",
+        "offvalueType": "json",
+        "officon": "",
+        "offcolor": "red",
+        "animate": false,
+        "className": "",
+        "x": 240,
+        "y": 620,
+        "wires": [
+            [
+                "b5ee898871272c3e",
+                "46df03d61506b714"
+            ]
+        ]
+    },
+    {
+        "id": "b5ee898871272c3e",
+        "type": "mqtt out",
+        "z": "51d90f6b1791decf",
+        "name": "MQTT - Controle Dispenser",
+        "topic": "petmonitor/alimentacao/controle",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "939fdde873a40273",
+        "x": 480,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "bdf78382bcef2ccc",
+        "type": "mqtt in",
+        "z": "51d90f6b1791decf",
+        "name": "MQTT - Status Ambiente",
+        "topic": "petmonitor/ambiente/status",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "939fdde873a40273",
+        "inputs": 0,
+        "x": 220,
+        "y": 460,
+        "wires": [
+            [
+                "4aa0e887da4a80d9",
+                "010b84bb69e83b0e",
+                "4a26bec6cbf936cb"
+            ]
+        ]
+    },
+    {
+        "id": "4aa0e887da4a80d9",
+        "type": "ui_gauge",
+        "z": "51d90f6b1791decf",
+        "name": "Temperatura",
+        "group": "28b6eb2946fcb092",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura (°C)",
+        "label": "°C",
+        "format": "{{msg.payload.temperatura}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "25",
+        "seg2": "35",
+        "x": 490,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "010b84bb69e83b0e",
+        "type": "ui_gauge",
+        "z": "51d90f6b1791decf",
+        "name": "Umidade",
+        "group": "28b6eb2946fcb092",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Umidade (%)",
+        "label": "%",
+        "format": "{{msg.payload.umidade}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#0078d7",
+            "#00b5e2",
+            "#000080"
+        ],
+        "seg1": "30",
+        "seg2": "60",
+        "x": 490,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "421bf8e94d0cf7ac",
+        "type": "mqtt out",
+        "z": "51d90f6b1791decf",
+        "name": "MQTT - Controle Ambiente",
+        "topic": "petmonitor/ambiente/controle",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "939fdde873a40273",
+        "x": 480,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "de82b9082f3d8856",
+        "type": "ui_slider",
+        "z": "51d90f6b1791decf",
+        "name": "Controle Ar-Condicionado",
+        "label": "Controle do Ar (°C)",
+        "tooltip": "",
+        "group": "28b6eb2946fcb092",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "petmonitor/ambiente/controle",
+        "topicType": "msg",
+        "min": "16",
+        "max": "30",
+        "step": 1,
+        "x": 220,
+        "y": 740,
+        "wires": [
+            [
+                "421bf8e94d0cf7ac",
+                "16801c7fc00f3ae3"
+            ]
+        ]
+    },
+    {
+        "id": "46df03d61506b714",
+        "type": "debug",
+        "z": "51d90f6b1791decf",
+        "name": "Debug Dispenser",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 470,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "4a26bec6cbf936cb",
+        "type": "debug",
+        "z": "51d90f6b1791decf",
+        "name": "Debug Ambiente",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 470,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "16801c7fc00f3ae3",
+        "type": "debug",
+        "z": "51d90f6b1791decf",
+        "name": "Debug Ar Condicionado",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 490,
+        "y": 800,
+        "wires": []
+    }
+]
