@@ -1,3 +1,13 @@
+Trabalho AP2 de SIHS
+
+EQUIPE COMPOSTA POR:
+
+CASSIEL STAVROS DE MELO DUTRA
+MANUELA CRISTINA PEREIRA BASTOS
+NICKOLAS JAVIER SANTOS LIVERO
+VICTOR ALBARADO BRAGA
+
+
 PetMonitor: Sistema Inteligente para Monitoramento e Alimentação de Pets
 Este projeto consiste em um sistema completo para monitorar e gerenciar as condições ambientais de um pet, além de controlar a liberação de ração automaticamente. O sistema integra hardware, MQTT, Node-RED, Flask, e uma Skill da Alexa.
 
